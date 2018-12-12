@@ -33,10 +33,10 @@ def count_elements(array)
     .map{|k, v| k.merge(count: v.length)}
 end 
 
-def merge_data(keys, values)
+def merge_data(keys, data)
   i = 0
   while i < keys.length
-   values.each do |element|
+   data.each do |element|
       element.each do |ka, va|
         if keys[i].has_value?(ka)
           keys[i].merge!(va)

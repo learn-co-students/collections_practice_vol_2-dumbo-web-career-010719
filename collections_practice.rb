@@ -37,9 +37,9 @@ def merge_data(keys, data)
   i = 0
   while i < keys.length
    data.each do |element|
-      element.each do |ka, va|
-        if keys[i].has_value?(ka)
-          keys[i].merge!(va)
+      element.each do |key, val|
+        if keys[i].has_value?(key)
+          keys[i].merge!(val)
         end
       end
     end

@@ -79,19 +79,17 @@ def find_cool(arg)
 end
 
 def organize_schools(arg)
+  new_hash = Hash.new()
 
-  new_hash = Hash.new(Array.new)
   arg.each do |key, value|
     value.each do |var, location|
-      new_hash[location] = []
+      if new_hash[location].nil?
+        new_hash[location] = [key]
+      else
+        new_hash[location] << key
+      end
     end
   end
-  
-  arg.each do |key, value|
-    value.each do |var, location|
-      new_hash[location] << key
-    end
-  end
-  
+
   return new_hash
 end
